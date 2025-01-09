@@ -1,5 +1,15 @@
 # FantasyFootballTeamOptimizer
-Returns expected points, floor and ceiling for each player in the league (on your team, on other teams, and free agents) - Still working on several improvements
+Returns expected points, floor and ceiling for each player in the league (on your team, on other teams, and free agents). 
+
+TO DO: Still working on several improvements including injury risk, similar players output, chances to overperform ceiling or underperform floor, etc 
+
+Contents:
+Fantasy_db.7z -backup of database (it needs to be updated every week, because datasets used as are live and changing constantly, sometimes incorrectly)
+History.7z - backup of scraped data (it needs to be updated every week, because datasets used as are live and changing constantly, sometimes incorrectly)
+import_area_footbaldb_sleeper_fix.csv - corrections in data, needs to be imported so that data is calculated properly
+import_area_trades.csv - trade data, needs to be imported so that data is calculated properly
+python scripts.7z - self explanatory 
+sql scripts.7z - self explanatory
 
 Python
 
@@ -37,7 +47,7 @@ Step 2: Install Required Libraries
 Step 3: Save and Organize Files
 
     go to a folder C:\Program Files\sleeper_env\Scripts for the project, create inside scripts folder History (in scripts now it is C:\Program Files\sleeper_env\Scripts, while folder C:\Program Files\sleeper_env\Scripts\History is created to log data).
-    Save the three scripts in this folder:
+    Save the scripts (python scripts.7z) in this folder:
         sleeper_api_DST.py
         sleeper_api_K.py
         sleeper_api_RB_QB_TE_WR.py
@@ -117,7 +127,7 @@ Review the Scripts:
 ----------------
 Ensure the scripts reference the correct database (USE statement).
 Check for placeholders or variables like <YourTableName> that need substitution.
-Execute the Scripts:
+Execute the Scripts (sql scripts.7z):
 
 Press F5 or click Execute to run the script.
 Step 4: Verify Execution
@@ -140,4 +150,4 @@ insert trade and fix data from csv data into tables
         FIRSTROW = 2            -- Skip the header row
     );
 
-run "execute scripts"
+run "execute scripts" ((sql scripts.7z))
